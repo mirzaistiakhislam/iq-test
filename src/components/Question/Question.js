@@ -1,10 +1,20 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const Question = ({ testQuestion, index }) => {
 
     console.log(testQuestion, index);
 
     const { question, options, correctAnswer } = testQuestion;
+
+    const checkAnswer = option => {
+        if (correctAnswer === option) {
+            toast("Answer is correct");
+        }
+        else {
+            toast("Answer was wrong");
+        }
+    }
 
     return (
         <div>
@@ -15,7 +25,7 @@ const Question = ({ testQuestion, index }) => {
                 <div className="card-body">
                     {
                         options.map(option => <div key={option}>
-                            <input type="radio" name="radio2" value={option} />
+                            <input onClick={() => checkAnswer(option)} type="radio" name="radio2" value={option} />
                             <label>{option}</label>
                         </div>)
 
