@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Header from '../Header/Header';
+import Topics from '../Topics/Topics';
 
 const Home = () => {
     const topics = useLoaderData();
@@ -10,9 +11,10 @@ const Home = () => {
 
             <div>
                 {
-                    topics.data.map(topic => {
-                        console.log(topic.id);
-                    })
+                    topics.data.map(topic => <Topics
+                        key={topic.id}
+                        topic={topic}
+                    ></Topics>)
                 }
             </div>
 
