@@ -20,9 +20,6 @@ const Question = ({ testQuestion, index }) => {
                         </div>)
 
                     }
-
-
-
                 </div>
 
             </div>
