@@ -2,7 +2,7 @@ import React from 'react';
 
 const Question = ({ testQuestion, index }) => {
 
-    // console.log(question, index);
+    console.log(testQuestion, index);
 
     const { question, options, correctAnswer } = testQuestion;
 
@@ -13,8 +13,15 @@ const Question = ({ testQuestion, index }) => {
                     Test {index + 1}: {question}
                 </div>
                 <div className="card-body">
-                    <h5 className="card-title">Special title treatment</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    {
+                        options.map(option => <div key={option}>
+                            <input type="radio" name="radio2" value={option} />
+                            <label>{option}</label>
+                        </div>)
+
+                    }
+
+
 
                 </div>
 
