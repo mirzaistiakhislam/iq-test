@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,11 +19,16 @@ const Question = ({ testQuestion, index }) => {
         }
     }
 
+    const showAnswer = () => {
+        toast(`Correct: ${correctAnswer}`);
+    }
+
     return (
         <div>
             <div className="card text-center">
-                <div className="card-header">
+                <div className="card-header d-flex justify-content-between">
                     Test {index + 1}: {question}
+                    <p onClick={() => showAnswer()} ><FontAwesomeIcon icon={faEye}></FontAwesomeIcon></p>
                 </div>
                 <div className="card-body">
                     {
