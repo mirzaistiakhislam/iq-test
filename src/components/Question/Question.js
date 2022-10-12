@@ -1,5 +1,6 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Question = ({ testQuestion, index }) => {
 
@@ -34,6 +35,8 @@ const Question = ({ testQuestion, index }) => {
 
             </div>
             <br /> <br /> <br />
+
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
