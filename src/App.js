@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Statistics from './components/Statistics/Statistics';
 import Quiz from './components/Quiz/Quiz';
 import Blogs from './components/Blogs/Blogs';
+import Error from './components/Error/Error';
 
 function App() {
   const router = createBrowserRouter([
@@ -37,6 +38,10 @@ function App() {
           element: <Blogs></Blogs>
         }
       ]
+    },
+    {
+      path: '*',
+      element: <Error></Error>
     }
 
   ])
